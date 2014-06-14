@@ -1,4 +1,4 @@
-Python-style kwargs in C++ {#mainpage}
+Python-style kwargs in C++
 =========
 
 When dealing with functions that have lots of optional parameters, or at
@@ -6,11 +6,11 @@ least for which resonable defaults are readily available, it's often a bit
 of a frustration in C++. Generally defaults are specified during a function
 as in:
 
-@code{cc}
-double BinarySearch(std::function<double(double> fn,
-                    int max_depth = 16, double epsilon = 1e-9,
-                    double lower_bound = 0, double upper_bound = 100);
-@endcode
+
+    double BinarySearch(std::function<double(double> fn,
+                        int max_depth = 16, double epsilon = 1e-9,
+                        double lower_bound = 0, double upper_bound = 100);
+
 
 And then if we call `BinarySearch` with only one parameter then the call will
 use the default values for the rest. But what if I want to specify custom
@@ -22,14 +22,14 @@ least, but it's easy to see how something more flexible would be desirable.
 Consider then the following two code snippets. Which is more readable?
 
 First snippet:
-@code{cc}
-double solution = BinarySearch(fn, 0, 100);
-@endcode
+
+    double solution = BinarySearch(fn, 0, 100);
+
 
 Second snippet:
-@code{cc}
-double solution = BinarySearch(fn, lower_bound = 0, upper_bound = 100);
-@endcode
+
+    double solution = BinarySearch(fn, lower_bound = 0, upper_bound = 100);
+
 
 I really like the way that optional arguments work in python with `kwargs`. I'd
 love to have that same kind of functionality in C++. `kwargs.h` implements
@@ -49,7 +49,7 @@ pair that shows up in the list of optional arguments.
 Overloading of the equals (`=`) operator gives us an opportunity for building
 the `(tag,T)` pairs within the parameter list of the function call.
 
-See more [documentation and examples] on github pages.
+See more [documentation and examples][href_doc] on github pages.
 
 [href_wiki]: http://en.cppreference.com/w/cpp/language/parameter_pack (Wikipedia)
 [href_doc]: http://cheshirekow.github.io/kwargs_doxygen/index.html (github)
