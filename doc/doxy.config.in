@@ -68,8 +68,6 @@ WARN_LOGFILE           =
 USE_MDFILE_AS_MAINPAGE = doc/pages/mainpage.md
 INPUT = ${CMAKE_CURRENT_SOURCE_DIR}/include      \
         ${CMAKE_CURRENT_SOURCE_DIR}/doc/pages   \
-        ${CMAKE_CURRENT_BINARY_DIR}/include      \
-        ${CMAKE_CURRENT_BINARY_DIR}/doc/pages
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.cc \
                          *.cpp \
@@ -81,7 +79,8 @@ EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = messages.pb.*
 EXCLUDE_SYMBOLS        =
-EXAMPLE_PATH           = ${CMAKE_CURRENT_SOURCE_DIR}/src
+EXAMPLE_PATH           = ${CMAKE_CURRENT_SOURCE_DIR}/src \
+                         ${CMAKE_CURRENT_SOURCE_DIR}/doc/example_output
 EXAMPLE_PATTERNS       = *.cc
 EXAMPLE_RECURSIVE      = NO
 IMAGE_PATH             =
@@ -177,7 +176,7 @@ EXPAND_ONLY_PREDEF     = NO
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           =
 INCLUDE_FILE_PATTERNS  =
-PREDEFINED             =
+PREDEFINED             = DOXYGEN_IGNORE
 EXPAND_AS_DEFINED      =
 SKIP_FUNCTION_MACROS   = YES
 TAGFILES               =

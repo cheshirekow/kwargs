@@ -1,0 +1,51 @@
+Created object 0
+Created object 1
+Created object 2
+Destroyed object 1
+Created object 3
+Created object 4
+Destroyed object 3
+Created object 5
+foo:
+----
+a: 1
+b: 2
+e: 5
+f: null
+
+Destroyed object 5
+Destroyed object 4
+Destroyed object 2
+Destroyed object 0
+Created object 6
+foo:
+----
+a: 1
+b: 2
+e: null
+f: 6
+
+Destroyed object 6
+Created object 7
+foo:
+----
+a: 1
+b: 2
+e: null
+f: 7
+
+foo:
+----
+a: 1
+b: 2
+e: null
+f: 7
+
+foo:
+----
+a: 1
+b: 2
+e: null
+f: *7
+
+Destroyed object 7

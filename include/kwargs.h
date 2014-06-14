@@ -78,6 +78,15 @@ typename TypeOfTagDefault<tag,Default,Args...>::Result
     GetImpl<tag,ContainsTag<tag,Args...>::result,Default,Args...>::Get(pack,d);
 }
 
+/// given a parameter pack, retrieves and return sthe parameter tagged with tag,
+/// or else returns a default value if tag is not in Args...
+template <int tag, typename Default, typename... Args>
+typename TypeOfTagDefault<tag,Default,Args...>::Result 
+    Get(ParamPack<Args...>& pack, Key<tag> key, Default d) {
+  return 
+    GetImpl<tag,ContainsTag<tag,Args...>::result,Default,Args...>::Get(pack,d);
+}
+
 }  //< namespace kw
 
 
@@ -85,6 +94,8 @@ typename TypeOfTagDefault<tag,Default,Args...>::Result
 //   Danger!!! Horrible implementation details below!!!
 //   Continue at your own risk!
 // ----------------------------------------------------------------------------
+
+#ifndef DOXYGEN_IGNORE
 
 namespace kw {
 
@@ -164,3 +175,4 @@ struct GetImpl<tag,true,Default,Args...>{
 
 }  //< namespace kw
 
+#endif  // DOXYGEN_IGNORE
